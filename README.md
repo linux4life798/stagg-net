@@ -8,3 +8,23 @@
   operates at 3.3V and 9600 baud.
 * It appears to have 1 start bit.
 * It sends some kind of status message every 3 seconds.
+
+
+# UART Protocol
+
+All I see is that the display module sends the following every 3 seconds.
+It does not change based on target temperature set point or on/off state.
+
+```
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+EF 0A 00 EF 0A
+```
