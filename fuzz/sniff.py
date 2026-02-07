@@ -15,13 +15,15 @@ def main():
     ser = serial.Serial(
         port=PORT,
         baudrate=BAUD,
-        # 0.1 and 0.15 eventually yield a broken packet.
+        # 0.1 and 0.15 eventually yield a broken packet -- after 13, 20, 36, or 44 packets
         # 0.2 eventually yield a broken packet.
-        # 0.25 eventually yield a broken packet.
+        # 0.25 eventually yield a broken packet -- after 72 or 99 packets
         # 0.3 eventually yield a broken packet -- although it took a while
         # 0.35 eventually yield a broken packet -- although it took a VERY VERY long time
-        # 0.375 seems to work consistently.
-        timeout=0.375,
+        # 0.375 eventually yield a broken packet -- although it took a VERY long time -- 73 packets (x 3 seconds between packets)
+        # 0.4 eventually yield a broken packet -- although it took a VERY long time -- 89 packets (x 3 seconds between packets)
+        # 0.??? seems to work consistently.
+        timeout=0.25,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
     )
