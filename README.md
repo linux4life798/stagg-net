@@ -30,3 +30,12 @@ EF 0A 00 EF 0A
 EF 0A 00 EF 0A
 EF 0A 00 EF 0A
 ```
+
+Upon startup, it transmits the following:
+
+```
+46 65 6C 6C 6F 77 3A 20 72 65 73 65 74 5F 63 6F 6E 74 72 6F 6C 6C 65 72
+0A EF 0A 00 EF 0A
+```
+
+Which spells out `Fellow: reset_controller` on the first line.
