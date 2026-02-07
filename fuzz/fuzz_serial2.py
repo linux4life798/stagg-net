@@ -22,6 +22,12 @@ RESP_WINDOW = 0.30            # total time to collect response after each send
 SLEEP_BETWEEN_TESTS = 0.05
 
 BASELINE = bytes.fromhex("ef 0a 00 ef 0a")
+BASELINE_PARTIAL1 = bytes.fromhex("ef 0a 00 ef")
+BASELINE_PARTIAL2 = bytes.fromhex("ef 0a 00")
+BASELINE_PARTIAL3 = bytes.fromhex("ef 0a")
+BASELINE_PARTIAL4 = bytes.fromhex("ef")
+BASELINE_PARTIAL5 = bytes.fromhex("00 ef 0a")
+
 
 # The magic init sequence (in hex) used to authenticate with the kettle:
 # ef dd 0b 30 31 32 33 34 35 36 37 38 39 30 31 32 33 34 9a 6d
@@ -34,18 +40,17 @@ def hx(b: bytes) -> str:
     return binascii.hexlify(b, b" ").decode()
 
 
-def strip_baseline(data: bytes) -> bytes:
-    """
-    Remove all occurrences of the baseline 5-byte heartbeat from a blob.
-    This is a blunt but effective first filter.
-    """
+def is_baseline(data: bytes) -> bool:
     if not data:
-        return b""
-    while True:
-        new = data.replace(BASELINE, b"")
-        if new == data:
-            return new
-        data = new
+        return False
+    return data in {
+        BASELINE,
+        BASELINE_PARTIAL1,
+        BASELINE_PARTIAL2,
+        BASELINE_PARTIAL3,
+        BASELINE_PARTIAL4,
+        BASELINE_PARTIAL5,
+    }
 
 
 def read_window(target, window_s: float) -> bytes:
@@ -100,13 +105,12 @@ def define_requests():
             s_random(b"", min_length=0, max_length=64, num_mutations=1000, name="payload")
 
 
-def log_interesting(case_name: str, sent: bytes, raw: bytes, filtered: bytes):
+def log_interesting(case_name: str, sent: bytes, raw: bytes):
     LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
     with LOG_PATH.open("a", encoding="utf-8") as f:
         f.write(f"\n=== {case_name} ===\n")
         f.write(f"SENT: {hx(sent)}\n")
         f.write(f"RAW : {hx(raw)}\n")
-        f.write(f"FILT: {hx(filtered)}\n")
 
 
 def main():
@@ -138,13 +142,9 @@ def main():
 
         # Read response window
         raw = read_window(target, RESP_WINDOW)
-        filtered = strip_baseline(raw)
-
-        # Interesting if: any remaining bytes after stripping baseline
-        # OR raw exists but filtered differs (e.g., partial baseline + extra)
-        if filtered:
-            print("INTERESTING! sent=", hx(data), " resp=", hx(filtered))
-            log_interesting("unknown_case", data, raw, filtered)
+        if raw and not is_baseline(raw):
+            print("INTERESTING! sent=", hx(data), " resp=", hx(raw))
+            log_interesting("unknown_case", data, raw)
 
     target.send = send_and_classify  # monkey patch for quick wins
 
