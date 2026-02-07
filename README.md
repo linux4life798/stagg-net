@@ -9,6 +9,8 @@
 * It appears to have 1 start bit.
 * It sends some kind of status message every 3 seconds.
 
+![Bottom cover](images/bottom-cover.jpeg)
+![Bottom cover removed](images/bottom-cover-removed.jpeg)
 
 # UART Protocol
 
