@@ -1,6 +1,6 @@
 # Info
 
-* **WARNING: +5VDC ping seems to be very low resistance to the hot side of mains power in.**
+* **WARNING: +5VDC pin seems to be very low resistance to the hot side of mains power in.**
   Furthermore, you can see 5V DC potential across line/main's hot lead and 0V DC.
   At the very least, you should not connect the +5V DC to your laptop's serial
   to USB adapter.
