@@ -24,6 +24,20 @@
 [CSR CSR100 Datasheet]: https://pdf.dzsc.com/99999/2013328165148606.pdf
 [Qualcomm CSR101x Series]: https://www.qualcomm.com/bluetooth/products/csr101x-series#benefits
 
+# Parts
+
+* UART Connector
+  - 4 pin 2.54 mm (0.1 inch)
+  - 0.5in wide (outside female side)
+  - 0.25in tall
+  - 0.28in long
+
+# References
+
+* https://github.com/levi/stagg-ekg-plus-ha
+  - https://github.com/levi/stagg-ekg-plus-ha/issues/6
+* https://github.com/tlyakhov/fellow-stagg-ekg-plus
+
 # UART Protocol
 
 All I see is that the display module sends the following every 3 seconds.
