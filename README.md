@@ -85,7 +85,7 @@ Upon startup, it transmits the following reset message.
 46 65 6C 6C 6F 77 3A 20 72 65 73 65 74 5F 63 6F 6E 74 72 6F 6C 6C 65 72 0A
 ```
 
-*Which spells out `Fellow: reset_controller\n` on the first line.*
+*Which spells out `Fellow: reset_controller\n`.*
 </details>
 
 
