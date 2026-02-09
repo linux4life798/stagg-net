@@ -5,7 +5,7 @@
   At the very least, you should not connect the +5V DC to your laptop's serial
   to USB adapter.
 * The internal serial connector, intended for the optional Bluetooth module,
-  operates at 3.3V and 9600 baud.
+  operates at 3.3V and 9600 baud no parity.
 * It appears to have 1 start bit.
 * It sends some kind of status message every 3 seconds.
 * The [Stagg EKG+ Manual] mentions `Contains Transmitter - FCC ID: 2AABGBTAC1000`.
@@ -51,8 +51,13 @@
 
 # UART Protocol
 
-All I see is that the display module sends the following every 3 seconds.
-It does not change based on target temperature set point or on/off state.
+This protocol seems similar to the BLE protocol that others have reverse engineered, but the interface is unresponsive to any of the
+BLE packets.
+
+All I see is that the display module sends the following packet every 3 seconds. It does not change based on target temperature set point or on/off state.
+
+<details>
+<summary>3 Second Heartbeat Packets</summary>
 
 ```
 EF 0A 00 EF 0A
@@ -67,13 +72,18 @@ EF 0A 00 EF 0A
 EF 0A 00 EF 0A
 EF 0A 00 EF 0A
 ```
+</details>
 
-Upon startup, it transmits the following:
+Upon startup, it transmits the following reset message.
+
+<details>
+<summary>Startup Message Packet</summary>
 
 ```
 46 65 6C 6C 6F 77 3A 20 72 65 73 65 74 5F 63 6F 6E 74 72 6F 6C 6C 65 72 0A
 ```
 
-Which spells out `Fellow: reset_controller\n` on the first line.
+*Which spells out `Fellow: reset_controller\n` on the first line.*
+</details>
 
 
