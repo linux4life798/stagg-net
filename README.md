@@ -17,6 +17,8 @@
   Now there is a [Qualcomm CSR101x Series].
 * The onboard MCU that controls the kettle and display is a `Cmsemicon CMS80F2618` `2105CNT`
   - https://www.changitech.com/uploads/file1/20220722/CMS80F261x_Datasheet_V1.05.pdf
+  - Although the chip is marked pretty clearly, the **pinout for the VCC
+    and GND don't match**.
 * Board: MY-EKG-100 Display Panel V1.1 RSJ305 2017-07010 from RisingStar.cn
 
 [Fellow Stagg EKG Kettle PCB Reverse Engineering Diagram](https://docs.google.com/drawings/d/1spSMMTtEVBVaj6GtIikueuyRw0ZZhn-C_dDxf22F0jw/edit?usp=sharing)
