@@ -15,6 +15,11 @@
   the `CSR CSR1000`. I found the [CSR CSR100 Datasheet].
 * Qualcomm acquired CSR (Cambridge Silicon Radio) in 2014.
   Now there is a [Qualcomm CSR101x Series].
+* The onboard MCU that controls the kettle and display is a `Cmsemicon CMS80F2618` `2105CNT`
+  - https://www.changitech.com/uploads/file1/20220722/CMS80F261x_Datasheet_V1.05.pdf
+* Board: MY-EKG-100 Display Panel V1.1 RSJ305 2017-07010 from RisingStar.cn
+
+[Fellow Stagg EKG Kettle PCB Reverse Engineering Diagram](https://docs.google.com/drawings/d/1spSMMTtEVBVaj6GtIikueuyRw0ZZhn-C_dDxf22F0jw/edit?usp=sharing)
 
 ![Bottom cover](images/bottom-cover.jpeg)
 ![Bottom cover removed](images/bottom-cover-removed.jpeg)
@@ -31,6 +36,12 @@
   - 0.5in wide (outside female side)
   - 0.25in tall
   - 0.28in long
+  - [Amazon - 10 Sets Jst Xh 2.54mm 4 Pin Plug Male Connector with 150mm Soft Silicone Wire & XH2.54 4P Female Connector](https://a.co/d/0iIOorKT)
+* [SparkFun Qwiic Pocket Development Board - ESP32-C6](https://www.sparkfun.com/sparkfun-qwiic-pocket-development-board-esp32-c6.html)
+* [SparkFun Power Meter - ACS37800 (Qwiic)](https://www.sparkfun.com/sparkfun-power-meter-acs37800-qwiic.html)
+  - Schematic - https://cdn.sparkfun.com/assets/1/9/f/6/9/Qwiic_Power_Meter-ACS37800_Schematic.pdf
+  - Datasheet - https://www.allegromicro.com/-/media/files/datasheets/acs37800-datasheet.pdf?sc_lang=en
+* [SparkFun Flexible Qwiic Cable - 200mm](https://www.sparkfun.com/flexible-qwiic-cable-200mm.html)
 
 # References
 
@@ -64,3 +75,5 @@ Upon startup, it transmits the following:
 ```
 
 Which spells out `Fellow: reset_controller\n` on the first line.
+
+
