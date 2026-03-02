@@ -43,6 +43,7 @@
 * [SparkFun Power Meter - ACS37800 (Qwiic)](https://www.sparkfun.com/sparkfun-power-meter-acs37800-qwiic.html)
   - Schematic - https://cdn.sparkfun.com/assets/1/9/f/6/9/Qwiic_Power_Meter-ACS37800_Schematic.pdf
   - Datasheet - https://www.allegromicro.com/-/media/files/datasheets/acs37800-datasheet.pdf?sc_lang=en
+  - Sample User Prgm - https://www.allegromicro.com/-/media/files/demo-boards/user-manuals/asek37800-sample-programmer-user-manual.pdf?sc_lang=en&utm_source=chatgpt.com
 * [SparkFun Flexible Qwiic Cable - 200mm](https://www.sparkfun.com/flexible-qwiic-cable-200mm.html)
 
 # References
