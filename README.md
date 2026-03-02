@@ -102,5 +102,3 @@ Upon startup, it transmits the following reset message.
 
 *Which spells out `Fellow: reset_controller\n`.*
 </details>
-
-
