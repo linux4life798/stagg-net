@@ -46,6 +46,20 @@
   - Sample User Prgm - https://www.allegromicro.com/-/media/files/demo-boards/user-manuals/asek37800-sample-programmer-user-manual.pdf?sc_lang=en&utm_source=chatgpt.com
 * [SparkFun Flexible Qwiic Cable - 200mm](https://www.sparkfun.com/flexible-qwiic-cable-200mm.html)
 
+# Connections
+
+* `VB` (V_BATT) -> `5V`
+* `GND`         -> GND
+* `IO16/TX`     -> Kettle RX (3.3V ref)
+* `IO17/RX`     -> Kettle TX (3.3V ref)
+* `IO18`        -> Button Down Click
+* `IO19`        -> Backlight
+* `IO2`         -> 100nF Cap (to GND) + 100kΩ (up to 1MΩ) series resistor -> Thermistor
+
+*`IO2` and `IO3` are ADC compatible (IO0 - IO6)*
+
+*An RC with 100kΩ and 100nF is 10ms. To be on the safe side, we should not ADC sample `IO2` faster than every 100ms.*
+
 # References
 
 * https://github.com/levi/stagg-ekg-plus-ha
