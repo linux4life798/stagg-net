@@ -21,7 +21,7 @@
     and GND don't match**.
 * Board: MY-EKG-100 Display Panel V1.1 RSJ305 2017-07010 from RisingStar.cn
 
-[Fellow Stagg EKG Kettle PCB Reverse Engineering Diagram](https://docs.google.com/drawings/d/1spSMMTtEVBVaj6GtIikueuyRw0ZZhn-C_dDxf22F0jw/edit?usp=sharing)
+[**Fellow Stagg EKG Kettle PCB Reverse Engineering Diagram**](https://docs.google.com/drawings/d/1spSMMTtEVBVaj6GtIikueuyRw0ZZhn-C_dDxf22F0jw/edit?usp=sharing)
 
 ![Bottom cover](images/bottom-cover.jpeg)
 ![Bottom cover removed](images/bottom-cover-removed.jpeg)
