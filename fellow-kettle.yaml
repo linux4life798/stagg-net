@@ -1,6 +1,6 @@
 esphome:
-  name: smart-kettle
-  friendly_name: Smart Water Kettle
+  name: fellow-kettle
+  friendly_name: Fellow Water Kettle
 
 # https://www.sparkfun.com/sparkfun-qwiic-pocket-development-board-esp32-c6.html
 esp32:
@@ -30,7 +30,7 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Smart-Kettle Fallback Hotspot"
+    ssid: "Fellow-Kettle Fallback Hotspot"
     password: "please-replace-with-something-valid"
 
 captive_portal:
